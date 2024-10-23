@@ -1,6 +1,6 @@
-# Odious2Text
+# Audio2Text
 
-Odious2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将音频文件转换为文本。
+Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将音频文件转换为文本。
 
 > 注意：此项目专注于语音到文本的转换，不具备说话人识别功能。
 
@@ -15,8 +15,8 @@ Odious2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将
 
 1. 克隆仓库并进入项目目录：
    ```
-   git clone https://github.com/zhoukunlin/odious2text.git
-   cd odious2text
+   git clone https://github.com/zhoukunlin/audio2text.git
+   cd audio2text
    ```
 
 2. 创建并激活虚拟环境：
@@ -50,29 +50,29 @@ Odious2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将
    注意事项：
    - `-C -` 参数支持断点续传
    - 解压后将模型放入 `vosk-models/` 目录，与 `zh-CN/` 同级
-   - 使用大型模型时，需修改 `odious2text.py` 中的模型路径
+   - 使用大型模型时，需修改 `audio2text.py` 中的模型路径
 
 ## 使用方法
 
-1. 将待处理音频文件放入 `odious` 文件夹。
+1. 将待处理音频文件放入 `audio` 文件夹。
 
-2. 确保 `odious2text.py` 中的模型路径正确：
+2. 确保 `audio2text.py` 中的模型路径正确：
    ```python
-   model_path = "../odious2text/vosk-models/vosk-model-cn-0.22"
+   model_path = "../audio2text/vosk-models/vosk-model-cn-0.22"
    ```
 
 3. 运行脚本：
    ```
-   python3 odious2text.py
+   python3 audio2text.py
    ```
 
-4. 转换后的文本文件将保存在 `odiousOut` 文件夹中。
+4. 转换后的文本文件将保存在 `audioOut` 文件夹中。
 
 ## 项目结构
 
-- `odious2text.py`：主程序脚本
-- `odious/`：输入音频文件目录
-- `odiousOut/`：输出文本文件目录
+- `audio2text.py`：主程序脚本
+- `audio/`：输入音频文件目录
+- `audioOut/`：输出文本文件目录
 - `vosk-models/`：Vosk 模型存储目录
 - `.venv/`：Python 虚拟环境
 
