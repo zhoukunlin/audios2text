@@ -78,5 +78,5 @@ def process_audio_files(input_dir, output_dir, model_path):
 # 使用示例
 input_directory = "odious"
 output_directory = "odiousOut"
-model_path = "/Users/zhoukunlin/实践项目/odious2text/vosk-models/vosk-model-cn-0.22"
+model_path = "../odious2text/vosk-models/vosk-model-cn-0.22"
 process_audio_files(input_directory, output_directory, model_path)

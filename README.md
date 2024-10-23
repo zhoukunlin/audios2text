@@ -52,7 +52,7 @@ Odious2Text 是一个使用 Vosk 语音识别模型将音频文件转换为文�
 
 2. 确保 `odious2text.py` 中的模型路径正确：
    ```python
-   model_path = "/path/to/your/vosk-model-cn-0.22"
+   model_path = "../odious2text/vosk-models/vosk-model-cn-0.22"
    ```
 
 3. 运行脚本:
