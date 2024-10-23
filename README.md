@@ -15,8 +15,8 @@ Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将�
 
 1. 克隆仓库并进入项目目录：
    ```
-   git clone https://github.com/zhoukunlin/audio2text.git
-   cd audio2text
+   git clone https://github.com/zhoukunlin/audios2text.git
+   cd audios2text
    ```
 
 2. 创建并激活虚拟环境：
@@ -39,8 +39,6 @@ Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将�
    ```
 
 4. 下载中文 Vosk 模型：
-   
-   项目默认包含一个小型模型（`vosk-models/zh-CN`）。如需更高精度，可下载约 1.3GB 的大型模型：
 
    ```
    curl -C - -L https://alphacephei.com/vosk/models/vosk-model-cn-0.22.zip -o vosk-model-cn-0.22.zip
@@ -49,24 +47,18 @@ Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将�
 
    注意事项：
    - `-C -` 参数支持断点续传
-   - 解压后将模型放入 `vosk-models/` 目录，与 `zh-CN/` 同级
-   - 使用大型模型时，需修改 `audio2text.py` 中的模型路径
+   - 解压后将模型放入 `vosk-models/` 目录
 
 ## 使用方法
 
 1. 将待处理音频文件放入 `audio` 文件夹。
 
-2. 确保 `audio2text.py` 中的模型路径正确：
-   ```python
-   model_path = "../audio2text/vosk-models/vosk-model-cn-0.22"
-   ```
-
-3. 运行脚本：
+2. 运行脚本：
    ```
    python3 audio2text.py
    ```
 
-4. 转换后的文本文件将保存在 `audioOut` 文件夹中。
+3. 转换后的文本文件将保存在 `audioOut` 文件夹中。
 
 ## 项目结构
 
@@ -85,7 +77,22 @@ Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将�
 
 - 处理大量或长时间的音频文件可能需要较长时间，请耐心等待。
 
-- 项目使用的 Vosk 模型配置如下：
+- 如果遇到 "模型不存在" 的错误，请检查以下几点：
+  1. 确保已下载并解压 Vosk 模型到 `vosk-models` 目录。
+  2. 检查模型文件夹的权限，确保程序有读取权限。
+
+- 首次运行时，模型加载可能需要一些时间，这是正常现象。
+
+- 对于较大的音频文件，可能需要更多的内存和处理时间。
+
+- 如果遇到与模型配置相关的错误，程序会自动删除 `mfcc.conf` 和 `model.conf` 文件。这不会影响模型的性能，因为 Vosk 会使用默认的配置。
+
+- 如果仍然遇到 "Failed to find feature config file" 错误，请确保模型文件夹中包含所有必要的文件。您可以尝试重新下载并解压模型文件。
+
+- 确保您的 Python 环境中安装了正确版本的 Vosk 库。您可以尝试更新 Vosk：
+  ```
+  pip install --upgrade vosk
+  ```
 
 ## 许可证
 
@@ -98,3 +105,11 @@ Audio2Text 是一个强大的 Python 项目，利用 Vosk 语音识别模型将�
 [zapps.pro](https://zapps.pro)
 
 [zhoukunlin.com.cn](https://zhoukunlin.com.cn)
+
+## 贡献
+
+欢迎提交问题和拉取请求。对于重大更改，请先开issue讨论您想要更改的内容。
+
+## 致谢
+
+感谢 Vosk 项目提供的优秀语音识别模型。
